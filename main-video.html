@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="codebase/dhtmlxgantt.js"></script>
+    <link href="codebase/dhtmlxgantt.css" rel="stylesheet">
+    <style>
+        html,
+        body {
+            height: 100%;
+            padding: 0px;
+            margin: 0px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="gantt_here" style='width:1920px; height:1080px;'></div>
+
+    <script type="text/javascript">
+        gantt.config.date_format = "%Y-%m-%d %H:%i";
+        gantt.init("gantt_here");
+        gantt.parse({
+            data: [
+                { id: 1, text: "กลุ่มกลศาสตร์ 1", start_date: null, duration: null, parent: 0, progress: 0, open: true },
+                { id: 2, text: "จองห้อง, จองอุปกรณ์, วางทีมถ่ายทำ ", start_date: "2022-05-01  00:00", duration: 1, parent: 1, progress: 0 },
+                { id: 3, text: "ถ่ายทำคอร์สสด, บันทึกเทป", start_date: "2022-05-02  00:00", duration: 1, parent: 1, progress: 0 },
+                { id: 4, text: "ตัดต่อไฟล์ชดเชยคอร์สสด + ส่งไฟล์", start_date: "2022-05-03  00:00", duration: 3, parent: 1, progress: 0 },
+                { id: 5, text: "ตัดต่อ QC1", start_date: "2022-05-06  00:00", duration: 3, parent: 1, progress: 0 },
+                { id: 6, text: "AT ตรวจไฟล์ QC1", start_date: "2022-05-09  00:00", duration: 2, parent: 1, progress: 0 },
+                { id: 7, text: "ตัดต่อ QC2", start_date: "2022-05-11  00:00", duration: 2, parent: 1, progress: 0 },
+                { id: 8, text: "AT ตรวจไฟล์ QC2", start_date: "2022-05-13  00:00", duration: 2, parent: 1, progress: 0 },
+                { id: 9, text: "MM + AT ประกบตรวจไฟล์, Export final file", start_date: "2022-05-15  00:00", duration: 1, parent: 1, progress: 0 },
+                { id: 10, text: "MM ลงระบบ", start_date: "2022-05-16  00:00", duration: 1, parent: 1, progress: 0 },
+        
+            ],
+            links: [
+                { id: 1, source: 2, target: 3, type: "0" },
+                { id: 2, source: 3, target: 4, type: "0" },
+                { id: 3, source: 4, target: 5, type: "0" },
+                { id: 4, source: 5, target: 6, type: "0" },
+                { id: 5, source: 6, target: 7, type: "0" },
+                { id: 6, source: 7, target: 8, type: "0" },
+                { id: 7, source: 8, target: 9, type: "0" },
+                { id: 8, source: 9, target: 10, type: "0" },
+            ]
+        });
+    </script>
+</body>
+
+</html>
