@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="codebase/dhtmlxgantt.js"></script>
+    <link href="codebase/dhtmlxgantt.css" rel="stylesheet">
+    <style>
+        html,
+        body {
+            height: 100%;
+            padding: 0px;
+            margin: 0px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="gantt_here" style='width:1920px; height:1080px;'></div>
+
+    <script type="text/javascript">
+        gantt.config.date_format = "%Y-%m-%d %H:%i";
+        gantt.init("gantt_here");
+        gantt.parse({
+            data: [
+                { id: 1, text: "กลุ่มกลศาสตร์ 1", start_date: null, duration: null, parent: 0, progress: 0, open: true },
+                { id: 2, text: "A-Team 1 ทำตันฉบับ", start_date: "2022-11-12 00:00", duration: 20, parent: 1, progress: 1 },
+                { id: 3, text: "Teacher อนุมัติต้นฉบับ", start_date: "2022-12-02 00:00", duration: 3, parent: 1, progress: 0.5 },
+                { id: 4, text: "Editor จัดหน้า/จัดพิมพ์", start_date: "2022-12-07 00:00", duration: 12, parent: 1, progress: null },
+                { id: 5, text: "Proof ตรวจ", start_date: "2022-12-23 00:00", duration: 4, parent: 1, progress: null },
+                { id: 6, text: "A-team 2 ตรวจ", start_date: "2022-12-29 00:00", duration: 5, parent: 1, progress: null },
+                { id: 7, text: "A-team 1 ตรวจครั้งที่ 1", start_date: "2023-01-05 00:00", duration: 5, parent: 1, progress: null },
+                { id: 8, text: "Editor แก้ไขครั้งที่ 1", start_date: "2023-01-12 00:00", duration: 2, parent: 1, progress: null },
+                { id: 9, text: "A-team 1 ตรวจครั้งที่ 2", start_date: "2023-01-16 00:00", duration: 2, parent: 1, progress: null },
+                { id: 10, text: "Teacher ตรวจครั้งที่ 1", start_date: "2023-01-18 00:00", duration: 3, parent: 1, progress: null },
+                { id: 11, text: "A-Team 1 + Editor ประกบแก้", start_date: "2023-01-23 00:00", duration: 2, parent: 1, progress: null },
+                { id: 12, text: "Section อนุมัติจัดพิมพ์", start_date: "2023-01-25 00:00", duration: 1, parent: 1, progress: null },
+                { id: 13, text: "Teacher อนุมัติจัดพิมพ์", start_date: "2023-01-26 00:00", duration: 3, parent: 1, progress: null },
+                { id: 14, text: "Editor จัดส่งตำรา", start_date: "2023-01-31 00:00", duration: 1, parent: 1, progress: null },
+                { id: 15, text: "Editor จัดส่ง ID Book", start_date: "2023-03-17 00:00", duration: 15, parent: 1, progress: null },
+                { id: 16, text: "A-Team + Editor ประกบแก้ (เมื่อพบจุดผิด)", start_date: "2023-02-06 00:00", duration: 2, parent: 1, progress: null },
+                { id: 17, text: "Teacher อนุมัติจัดพิมพ์ (คอร์สระบบ/Re Print)", start_date: "2023-02-09 00:00", duration: 3, parent: 1, progress: null },
+
+                { id: 18, text: "Editor จัดส่งตำรา (ระบบ)", start_date: "2023-12-19 00:00", duration: null, parent: 1, progress: 0.8, open: true },
+                { id: 19, text: "วันที่ Product ต้องการตำราสด", start_date: null, duration: null, parent: 18, progress: 0 },
+                { id: 20, text: "วันที่น้องเริ่มเรียนคอร์สสด", start_date: null, duration: null, parent: 18, progress: 0 },
+                { id: 21, text: "วันที่ LIC ส่งตำราคอร์สระบบ", start_date: null, duration: null, parent: 18, progress: 0 },
+                { id: 22, text: "วันที่น้องเริ่มเรียนระบบ", start_date: null, duration: null, parent: 18, progress: 0 },
+                { id: 23, text: "Product ขายคอร์ส", start_date: "2023-03-17 00:00", duration: null, parent: 1, progress: 0 },
+
+                { id: 24, text: "กลุ่มกลศาสตร์ 2", start_date: null, duration: null, parent: 0, progress: 0, open: true },
+                { id: 25, text: "A-Team 1 ทำตันฉบับ", start_date: "2022-11-12 00:00", duration: 20, parent: 24, progress: 1 },
+                { id: 26, text: "Teacher อนุมัติต้นฉบับ", start_date: "2022-12-02 00:00", duration: 3, parent: 24, progress: 0.5 },
+                { id: 27, text: "Editor จัดหน้า/จัดพิมพ์", start_date: "2022-12-07 00:00", duration: 12, parent: 24, progress: null },
+                { id: 28, text: "Proof ตรวจ", start_date: "2022-12-23 00:00", duration: 4, parent: 24, progress: null },
+                { id: 29, text: "A-team 2 ตรวจ", start_date: "2022-12-29 00:00", duration: 5, parent: 24, progress: null },
+                { id: 30, text: "A-team 1 ตรวจครั้งที่ 1", start_date: "2023-01-05 00:00", duration: 5, parent: 24, progress: null },
+                { id: 31, text: "Editor แก้ไขครั้งที่ 1", start_date: "2023-01-12 00:00", duration: 2, parent: 24, progress: null },
+                { id: 32, text: "A-team 1 ตรวจครั้งที่ 2", start_date: "2023-01-16 00:00", duration: 2, parent: 24, progress: null },
+                { id: 33, text: "Teacher ตรวจครั้งที่ 1", start_date: "2023-01-18 00:00", duration: 3, parent: 24, progress: null },
+                { id: 34, text: "A-Team 1 + Editor ประกบแก้", start_date: "2023-01-23 00:00", duration: 2, parent: 24, progress: null },
+                { id: 35, text: "Section อนุมัติจัดพิมพ์", start_date: "2023-01-25 00:00", duration: 1, parent: 24, progress: null },
+                { id: 36, text: "Teacher อนุมัติจัดพิมพ์", start_date: "2023-01-26 00:00", duration: 3, parent: 24, progress: null },
+                { id: 37, text: "Editor จัดส่งตำรา", start_date: "2023-01-31 00:00", duration: 1, parent: 24, progress: null },
+                { id: 38, text: "Editor จัดส่ง ID Book", start_date: "2023-03-17 00:00", duration: 15, parent: 24, progress: null },
+                { id: 39, text: "A-Team + Editor ประกบแก้ (เมื่อพบจุดผิด)", start_date: "2023-02-06 00:00", duration: 2, parent: 24, progress: null },
+                { id: 40, text: "Teacher อนุมัติจัดพิมพ์ (คอร์สระบบ/Re Print)", start_date: "2023-02-09 00:00", duration: 3, parent: 24, progress: null },
+
+                { id: 41, text: "Editor จัดส่งตำรา (ระบบ)", start_date: "2023-12-19 00:00", duration: null, parent: 24, progress: 0.8, open: true },
+                { id: 42, text: "วันที่ Product ต้องการตำราสด", start_date: null, duration: null, parent: 41, progress: 0 },
+                { id: 43, text: "วันที่น้องเริ่มเรียนคอร์สสด", start_date: null, duration: null, parent: 41, progress: 0 },
+                { id: 44, text: "วันที่ LIC ส่งตำราคอร์สระบบ", start_date: null, duration: null, parent: 41, progress: 0 },
+                { id: 45, text: "วันที่น้องเริ่มเรียนระบบ", start_date: null, duration: null, parent: 41, progress: 0 },
+                { id: 46, text: "Product ขายคอร์ส", start_date: "2023-03-17 00:00", duration: null, parent: 41, progress: 0 },
+            ],
+            links: [
+                // { id: 1, source: 2, target: 3, type: "0" },
+                // { id: 2, source: 3, target: 4, type: "0" },
+                // { id: 3, source: 5, target: 6, type: "0" }
+            ]
+        });
+    </script>
+</body>
+
+</html>
